@@ -1,9 +1,13 @@
 'use strict';
 
 $( document ).ready(function() {
-// $('#fightPirates').on('click', function(){
-//   console.log('clicked');
-// });
+$('.ocean').on('click', function(event){
+  console.log(this);
+  event.target.style.background = 'green';
+
+});
+
+
 });
 
 

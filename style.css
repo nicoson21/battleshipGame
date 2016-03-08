@@ -22,30 +22,7 @@
 #fightPirates {
 
 }
-button {
-  padding-top: 30px;
+.gameSquare {
+  border: 1px solid black;
+  height: 50px;
 }
-.container {
-	height: 425px;
-	width: 489px;
-	background-color: #898A9A;
-	margin: 0 auto;
-	padding: 10px 1px 1px 2px;
-}
-.square {
-	height: 100px;
-	width: 120px;
-	float: left;
-	margin: 2px 1px 0px 1px;
-	border-radius: 5px;
-	box-sizing: border-box;
-}
-.image {
-	height: 100px;
-	width: 120px;
-	float: left;
-	border: 1px solid black;
-	border-radius: 5px;
-	visibility: hidden;
-}
-#ocean {}
