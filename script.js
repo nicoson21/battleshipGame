@@ -26,18 +26,22 @@ for (var i = 0; i < 10; i++) {
   }
 }
 var shipLength;
-var a = Math.floor(Math.random() * 2);
-console.log(a);
 
-for (shipLength = 2; shipLength < 6; shipLength++) {
 
+for (shipLength = 1; shipLength < 6; shipLength++) {
+  var a = Math.floor(Math.random() * 2);
+  console.log(shipLength + " " + a);
   if(a<1) {
+    //a=0 is horizontal
     var x = Math.floor(Math.random() * 10);
     var y = Math.floor(Math.random() * 10);
 
     for (var i = 0; i < shipLength+1; i++) {
       if((x + shipLength < 10)){
       var $square = $('#square' + (x+i) + (y));
+      // (shipPlacement[x + i][y]) = 1;
+      // console.log('Where is the ship?')
+      // console.log(shipPlacement[x + i][y]);
       $square.css('backgroundColor', 'red');
       } else {
         var $square = $('#square' + (((x + shipLength) - 10)+i) + (y));
@@ -46,19 +50,19 @@ for (shipLength = 2; shipLength < 6; shipLength++) {
     }
   }
   else {
-    for (shipLength = 2; shipLength < 6; shipLength++) {
+      //a=1 is veritcal
       var x = Math.floor(Math.random() * 10);
       var y = Math.floor(Math.random() * 10);
 
       for (var i = 0; i < shipLength+1; i++) {
         if((y + shipLength < 10)){
           var $square = $('#square' + (x) + (y+i));
-          $square.css('backgroundColor', 'red');
+          $square.css('backgroundColor', 'blue');
         } else {
           var $square = $('#square' + (x) + (((y + shipLength) - 10)+i));
-          $square.css('backgroundColor', 'red');
+          $square.css('backgroundColor', 'blue');
         }
       }
-    }
+
   }
 }
