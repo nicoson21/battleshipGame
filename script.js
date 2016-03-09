@@ -27,42 +27,38 @@ for (var i = 0; i < 10; i++) {
 }
 var shipLength;
 
-
-for (shipLength = 1; shipLength < 6; shipLength++) {
-  var a = Math.floor(Math.random() * 2);
-  console.log(shipLength + " " + a);
-  if(a<1) {
-    //a=0 is horizontal
-    var x = Math.floor(Math.random() * 10);
+function placeShip(shipLength) {
+  var horizontal = Math.floor(Math.random() * 2) === 0;
+  if (horizontal) {
+    var x = Math.floor(Math.random() * (10 - shipLength));
     var y = Math.floor(Math.random() * 10);
-
-    for (var i = 0; i < shipLength+1; i++) {
-      if((x + shipLength < 10)){
-      var $square = $('#square' + (x+i) + (y));
-      // (shipPlacement[x + i][y]) = 1;
-      // console.log('Where is the ship?')
-      // console.log(shipPlacement[x + i][y]);
-      $square.css('backgroundColor', 'red');
-      } else {
-        var $square = $('#square' + (((x + shipLength) - 10)+i) + (y));
-        $square.css('backgroundColor', 'red');
+    for (var i = 0; i < shipLength + 1; i++) {
+      if (shipPlacement[x + i][y] === 1) {
+        return placeShip(shipLength);
       }
+    }
+    for (var i = 0; i < shipLength + 1; i++) {
+      var $square = $('#square' + (x+i) + (y));
+      shipPlacement[x + i][y] = 1;
+      $square.css('backgroundColor', 'red');
     }
   }
   else {
-      //a=1 is veritcal
-      var x = Math.floor(Math.random() * 10);
-      var y = Math.floor(Math.random() * 10);
-
-      for (var i = 0; i < shipLength+1; i++) {
-        if((y + shipLength < 10)){
-          var $square = $('#square' + (x) + (y+i));
-          $square.css('backgroundColor', 'blue');
-        } else {
-          var $square = $('#square' + (x) + (((y + shipLength) - 10)+i));
-          $square.css('backgroundColor', 'blue');
-        }
+    var x = Math.floor(Math.random() * 10);
+    var y = Math.floor(Math.random() * (10 - shipLength));
+    for (var i = 0; i < shipLength + 1; i++) {
+      if (shipPlacement[x][y + i] === 1) {
+        return placeShip(shipLength);
       }
-
+    }
+    for (var i = 0; i < shipLength + 1; i++) {
+      var $square = $('#square' + (x) + (y + i));
+      shipPlacement[x][y + i] = 1;
+      $square.css('backgroundColor', 'red');
+    }
   }
+}
+
+for (shipLength = 1; shipLength < 6; shipLength++) {
+  placeShip(shipLength);
 }
