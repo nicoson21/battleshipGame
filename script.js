@@ -26,10 +26,11 @@ for (var i = 0; i < 10; i++) {
   }
 }
 var shipLength;
+var a = Math.floor(Math.random() * 2);
+console.log(a);
 
 for (shipLength = 2; shipLength < 6; shipLength++) {
-  var a = Math.floor(Math.random() * 2);
-  console.log(a);
+
   if(a<1) {
     var x = Math.floor(Math.random() * 10);
     var y = Math.floor(Math.random() * 10);
@@ -38,19 +39,9 @@ for (shipLength = 2; shipLength < 6; shipLength++) {
       if((x + shipLength < 10)){
       var $square = $('#square' + (x+i) + (y));
       $square.css('backgroundColor', 'red');
-      // if(shipLength = 2){ $square.css('backgroundColor', 'red');
-      // } else if(shipLength = 3) { $square.css('backgroundColor', 'orange');
-      // } else if(shipLength = 4) { $square.css('backgroundColor', 'yellow');
-      // } else if(shipLength = 5) { $square.css('backgroundColor', 'orange');
-      // }
       } else {
         var $square = $('#square' + (((x + shipLength) - 10)+i) + (y));
         $square.css('backgroundColor', 'red');
-        // if(shipLength = 2){ $square.css('backgroundColor', 'red');
-        // } else if(shipLength = 3) { $square.css('backgroundColor', 'orange');
-        // } else if(shipLength = 4) { $square.css('backgroundColor', 'yellow');
-        // } else if(shipLength = 5) { $square.css('backgroundColor', 'orange');
-        // }
       }
     }
   }
