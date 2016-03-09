@@ -26,28 +26,64 @@ for (var i = 0; i < 10; i++) {
     // console.log(gameSquare.id);
   }
 }
+var shipLength;
+//
+// var x = Math.floor(Math.random() * 10);
+// var y = Math.floor(Math.random() * 10);
+// console.log('square' + x + y);
+//
+//
+// //when ship is horizontal
+// for (var i = 0; i < shipLength+1; i++) {
+//   if((x + shipLength < 10)){
+//   var $square = $('#square' + (x+i) + (y));
+//   $square.css('backgroundColor', 'red');
+// }
+// }
+//
+// var a = Math.floor(Math.random() * 10);
+// var b = Math.floor(Math.random() * 10);
+// //constructor function to build ships
+// var shipLength = 2;
+// //when ship is horizontal
+// for (var i = 0; i < shipLength+1; i++) {
+//   if((a + shipLength < 10)){
+//   var $square = $('#square' + (a+i) + (b));
+//   $square.css('backgroundColor', 'red');
+// }
+// }
+var a = Math.floor(Math.random() * 2);
+console.log(a);
+if(a<1){
+  for (shipLength = 2; shipLength < 6; shipLength++) {
+    var x = Math.floor(Math.random() * 10);
+    var y = Math.floor(Math.random() * 10);
 
-var x = Math.floor(Math.random() * 10);
-var y = Math.floor(Math.random() * 10);
-console.log('square' + x + y);
-// var hit = shipPlacement;
-// shipPlacement[x][y] = 1;
-// shipPlacement[x+1][y] = 1;
-var shipLength = 2;
-//when ship is horizontal
-for (var i = 0; i < shipLength+1; i++) {
-  if((x + shipLength < 10)){
-  var $square = $('#square' + (x+i) + (y));
-  $square.css('backgroundColor', 'red');
-} else{ console.log('did not fit on page')}
+    for (var i = 0; i < shipLength+1; i++) {
+      if((x + shipLength < 10)){
+      var $square = $('#square' + (x+i) + (y));
+      $square.css('backgroundColor', 'red');
+      } else {
+      var other = ((x + shipLength) - 10);
+      var $square = $('#square' + (other+i) + (y));
+      $square.css('backgroundColor', 'red');
+      }
+    }
+  }
+} else {
+  for (shipLength = 2; shipLength < 6; shipLength++) {
+    var x = Math.floor(Math.random() * 10);
+    var y = Math.floor(Math.random() * 10);
+
+    for (var i = 0; i < shipLength+1; i++) {
+      if((y + shipLength < 10)){
+      var $square = $('#square' + (x) + (y+i));
+      $square.css('backgroundColor', 'red');
+      } else {
+      var other = ((y + shipLength) - 10);
+      var $square = $('#square' + (x) + (other+i));
+      $square.css('backgroundColor', 'red');
+      }
+    }
+  }
 }
-// var $square = $('#square' + x + y);
-// $square.css('backgroundColor', 'red');
-// .style.backgroundColor = 'red';
-// console.log(shipPlacement);
-
-//constructor function to build ships
-
-
-
-  // (shipPlacement[i][j]).style.backgroundColor = 'black';
