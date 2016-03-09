@@ -23,42 +23,14 @@ for (var i = 0; i < 10; i++) {
     shipPlacement[i][j] = 0;
     gameSquare.className = 'gameSquare';
     gameSquare.id = 'square' + j + i;
-    // console.log(gameSquare.id);
   }
 }
 var shipLength;
-//
-// var x = Math.floor(Math.random() * 10);
-// var y = Math.floor(Math.random() * 10);
-// console.log('square' + x + y);
-//
-//
-// //when ship is horizontal
-// for (var i = 0; i < shipLength+1; i++) {
-//   if((x + shipLength < 10)){
-//   var $square = $('#square' + (x+i) + (y));
-//   $square.css('backgroundColor', 'red');
-// }
-// }
-//
-// var a = Math.floor(Math.random() * 10);
-// var b = Math.floor(Math.random() * 10);
-// //constructor function to build ships
-// var shipLength = 2;
-// //when ship is horizontal
-// for (var i = 0; i < shipLength+1; i++) {
-//   if((a + shipLength < 10)){
-//   var $square = $('#square' + (a+i) + (b));
-//   $square.css('backgroundColor', 'red');
-// }
-// }
-// var a = Math.floor(Math.random() * 2);
-// console.log(a);
 
-  for (shipLength = 2; shipLength < 6; shipLength++) {
-    var a = Math.floor(Math.random() * 2);
-    console.log(a);
-    if(a<1) {
+for (shipLength = 2; shipLength < 6; shipLength++) {
+  var a = Math.floor(Math.random() * 2);
+  console.log(a);
+  if(a<1) {
     var x = Math.floor(Math.random() * 10);
     var y = Math.floor(Math.random() * 10);
 
@@ -66,28 +38,36 @@ var shipLength;
       if((x + shipLength < 10)){
       var $square = $('#square' + (x+i) + (y));
       $square.css('backgroundColor', 'red');
+      // if(shipLength = 2){ $square.css('backgroundColor', 'red');
+      // } else if(shipLength = 3) { $square.css('backgroundColor', 'orange');
+      // } else if(shipLength = 4) { $square.css('backgroundColor', 'yellow');
+      // } else if(shipLength = 5) { $square.css('backgroundColor', 'orange');
+      // }
       } else {
-      // var other = ((x + shipLength) - 10);
-      var $square = $('#square' + (((x + shipLength) - 10)+i) + (y));
-      $square.css('backgroundColor', 'red');
+        var $square = $('#square' + (((x + shipLength) - 10)+i) + (y));
+        $square.css('backgroundColor', 'red');
+        // if(shipLength = 2){ $square.css('backgroundColor', 'red');
+        // } else if(shipLength = 3) { $square.css('backgroundColor', 'orange');
+        // } else if(shipLength = 4) { $square.css('backgroundColor', 'yellow');
+        // } else if(shipLength = 5) { $square.css('backgroundColor', 'orange');
+        // }
       }
     }
   }
- else {
-  for (shipLength = 2; shipLength < 6; shipLength++) {
-    var x = Math.floor(Math.random() * 10);
-    var y = Math.floor(Math.random() * 10);
+  else {
+    for (shipLength = 2; shipLength < 6; shipLength++) {
+      var x = Math.floor(Math.random() * 10);
+      var y = Math.floor(Math.random() * 10);
 
-    for (var i = 0; i < shipLength+1; i++) {
-      if((y + shipLength < 10)){
-      var $square = $('#square' + (x) + (y+i));
-      $square.css('backgroundColor', 'red');
-      } else {
-      // var other = ((y + shipLength) - 10);
-      var $square = $('#square' + (x) + (((y + shipLength) - 10)+i));
-      $square.css('backgroundColor', 'red');
+      for (var i = 0; i < shipLength+1; i++) {
+        if((y + shipLength < 10)){
+          var $square = $('#square' + (x) + (y+i));
+          $square.css('backgroundColor', 'red');
+        } else {
+          var $square = $('#square' + (x) + (((y + shipLength) - 10)+i));
+          $square.css('backgroundColor', 'red');
+        }
       }
     }
   }
-}
 }
