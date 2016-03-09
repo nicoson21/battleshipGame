@@ -5,7 +5,6 @@ $('.gameSquare').on('click', function(event){
   console.log(this);
   event.target.style.background = 'green';
 });
-$('gameSquare.id').each
 });
 
 var atlanticOcean = document.getElementsByClassName('atlanticOcean')[0];
@@ -23,14 +22,21 @@ for (var i = 0; i < 10; i++) {
     wave.appendChild(gameSquare);
     shipPlacement[i][j] = 0;
     gameSquare.className = 'gameSquare';
-    gameSquare.id = "[" + j + "]" + "[" + i + "]" ;
+    gameSquare.id = 'square' + j + i;
     console.log(gameSquare.id);
   }
 }
-var where =
-console.log(gameSquare.id);
-var hit = shipPlacement[gameSquare.id] = 1;
-console.log(hit);
+var x = 4;
+var y = 2;
+var hit = shipPlacement;
+hit[x][y] = 1;
+
+var $square = $('#square' + x + y);
+console.log($square.css('backgroundColor', 'red'));
+// .style.backgroundColor = 'red';
+console.log(shipPlacement);
+
+//constructor function to build ships
 
 
 
