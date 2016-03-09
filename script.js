@@ -23,18 +23,28 @@ for (var i = 0; i < 10; i++) {
     shipPlacement[i][j] = 0;
     gameSquare.className = 'gameSquare';
     gameSquare.id = 'square' + j + i;
-    console.log(gameSquare.id);
+    // console.log(gameSquare.id);
   }
 }
-var x = 4;
-var y = 2;
-var hit = shipPlacement;
-hit[x][y] = 1;
 
-var $square = $('#square' + x + y);
-console.log($square.css('backgroundColor', 'red'));
+var x = Math.floor(Math.random() * 10);
+var y = Math.floor(Math.random() * 10);
+console.log('square' + x + y);
+// var hit = shipPlacement;
+// shipPlacement[x][y] = 1;
+// shipPlacement[x+1][y] = 1;
+var shipLength = 2;
+//when ship is horizontal
+for (var i = 0; i < shipLength+1; i++) {
+  if((x + shipLength < 10)){
+  var $square = $('#square' + (x+i) + (y));
+  $square.css('backgroundColor', 'red');
+} else{ console.log('did not fit on page')}
+}
+// var $square = $('#square' + x + y);
+// $square.css('backgroundColor', 'red');
 // .style.backgroundColor = 'red';
-console.log(shipPlacement);
+// console.log(shipPlacement);
 
 //constructor function to build ships
 
