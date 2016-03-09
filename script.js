@@ -10,25 +10,21 @@ $('.gameSquare').on('click', function(event){
 var atlanticOcean = document.getElementsByClassName('atlanticOcean')[0];
 var set = document.createElement('section');
 atlanticOcean.appendChild(set);
-var shipPlacement = [];
+var shipPlacement = new Array();
 
 for (var i = 0; i < 10; i++) {
   var wave = document.createElement('div');
   set.appendChild(wave);
-  // var waveRow = [];
-  // waveRow.push(0);
+  shipPlacement[i] = new Array();
   wave.style.clear = 'both';
   for (var j = 0; j < 10; j++) {
     var gameSquare = document.createElement('div');
     wave.appendChild(gameSquare);
-    // var singleWave = [];
-    // singleWave.push(0);
+    shipPlacement[i][j] = 0;
     gameSquare.className = 'gameSquare';
     gameSquare.id = j + " " + i;
   }
-  // waveRow.push(singleWave);
 }
-
-var ship = {};
-// document.createElement.
-// ship.className = '.ship';
+console.log(shipPlacement);
+shipPlacement[0][0] = 1;
+console.log(shipPlacement);
