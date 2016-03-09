@@ -5,6 +5,7 @@ $('.gameSquare').on('click', function(event){
   console.log(this);
   event.target.style.background = 'green';
 });
+$('gameSquare.id').each
 });
 
 var atlanticOcean = document.getElementsByClassName('atlanticOcean')[0];
@@ -22,9 +23,15 @@ for (var i = 0; i < 10; i++) {
     wave.appendChild(gameSquare);
     shipPlacement[i][j] = 0;
     gameSquare.className = 'gameSquare';
-    gameSquare.id = j + " " + i;
+    gameSquare.id = "[" + j + "]" + "[" + i + "]" ;
+    console.log(gameSquare.id);
   }
 }
-console.log(shipPlacement);
-shipPlacement[0][0] = 1;
-console.log(shipPlacement);
+var where =
+console.log(gameSquare.id);
+var hit = shipPlacement[gameSquare.id] = 1;
+console.log(hit);
+
+
+
+  // (shipPlacement[i][j]).style.backgroundColor = 'black';
