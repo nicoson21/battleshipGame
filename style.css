@@ -11,7 +11,7 @@ p {
   font-size: 15px;
 }
 .atlanticOcean {
-  width: 100%;
+  width: 80%;
   background-color: #4B648A;
   margin: 0 auto;
   overflow: auto;
@@ -24,7 +24,7 @@ p {
   background-color: black;
 }
 .gameSquare {
-  height: 80px;
+  height: 60px;
   width: 10%;
   float: left;
   padding-top: 10%;
@@ -36,7 +36,6 @@ p {
 }
 .twitterBox {
   border: 1px solid #051937;
-  height 1000px;
 }
 .scoreboard {
   font-size: 25px;
