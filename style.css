@@ -17,6 +17,9 @@ footer {
 /*.wave {
   border: 1px solid black;
 }*/
+.covered {
+  background-color: black;
+}
 .gameSquare {
   height: 100px;
   width: 10%;
