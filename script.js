@@ -7,12 +7,9 @@ var hitCounter = 0;
 var missCounter = 0;
 $( document ).ready(function() {
   $('.gameSquare').on('click', function(event){
-      // $(event.target).toggle();
-
-    console.log(event.target.id.replace('square', '').split(''));
+    // console.log(event.target.id.replace('square', '').split(''));
     var a = event.target.id.charAt(6);
     var b = event.target.id.charAt(7);
-
 
     if(((shipPlacement[a][b]) === 1)){
       // console.log('hit');
@@ -22,15 +19,16 @@ $( document ).ready(function() {
       // console.log(hitCounter);
         $('.hitScore').html(hitCounter);
       }
-    } else if(event.target.style.background !== 'white') {
+      } else if(event.target.style.background !== 'white') {
       // console.log('miss');
       missCounter += 1;
       event.target.style.background = 'white';
       // console.log(missCounter);
       $('.missScore').html(missCounter);
-    }
-    console.log('Hits: ' + hitCounter);
-    console.log('Misses: ' + missCounter);
+      }
+    // console.log('Hits: ' + hitCounter);
+    // console.log('Misses: ' + missCounter);
+
     if(hitCounter === 20){
       alert('You Sunk all the ships!');
       window.location.href = "win.html";
@@ -92,4 +90,4 @@ function placeShip(shipLength) {
 for (shipLength = 1; shipLength < 6; shipLength++) {
   placeShip(shipLength);
 }
-console.log(shipPlacement);
+// console.log(shipPlacement);
