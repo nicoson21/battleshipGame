@@ -7,6 +7,9 @@ html {
 footer {
   margin-top: 20px;
 }
+p {
+  font-size: 15px;
+}
 .atlanticOcean {
   width: 100%;
   background-color: #4B648A;

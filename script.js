@@ -19,17 +19,23 @@ $( document ).ready(function() {
       hitCounter += 1;
       event.target.style.background = 'red';
       // console.log(hitCounter);
-      $('.hitScore').html('Hello World!');
+      $('.hitScore').html(hitCounter);
+
     } else {
       // console.log('miss');
       missCounter += 1;
       event.target.style.background = 'white';
       // console.log(missCounter);
+      $('.missScore').html(missCounter);
     }
-    console.log(hitCounter);
+    console.log('Hits: ' + hitCounter);
+    console.log('Misses: ' + missCounter);
     if(hitCounter === 20){
       alert('You Sunk all the ships!');
       window.location.href = "win.html";
+    } else if(missCounter === 50) {
+    alert('Your aim is terrible! Your crew have mutinied!');
+    window.location.href = "lose.html";
     }
   });
 });
