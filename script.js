@@ -14,14 +14,15 @@ $( document ).ready(function() {
     var b = event.target.id.charAt(7);
 
 
-    if((shipPlacement[a][b]) === 1){
+    if(((shipPlacement[a][b]) === 1)){
       // console.log('hit');
-      hitCounter += 1;
-      event.target.style.background = 'red';
+      if(event.target.style.background !== 'red'){
+        hitCounter += 1;
+        event.target.style.background = 'red';
       // console.log(hitCounter);
-      $('.hitScore').html(hitCounter);
-
-    } else {
+        $('.hitScore').html(hitCounter);
+      }
+    } else if(event.target.style.background !== 'white') {
       // console.log('miss');
       missCounter += 1;
       event.target.style.background = 'white';
