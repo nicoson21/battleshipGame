@@ -24,7 +24,7 @@ p {
   background-color: black;
 }
 .gameSquare {
-  height: 100px;
+  height: 80px;
   width: 10%;
   float: left;
   padding-top: 10%;
@@ -36,6 +36,7 @@ p {
 }
 .twitterBox {
   border: 1px solid #051937;
+  height 1000px;
 }
 .scoreboard {
   font-size: 25px;
