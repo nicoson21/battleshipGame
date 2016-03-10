@@ -3,7 +3,8 @@ var shipLength;
 var shipPlacement = new Array();
 var atlanticOcean = document.getElementsByClassName('atlanticOcean')[0];
 var set = document.createElement('section');
-
+var hitCounter = 0;
+var missCounter = 0;
 $( document ).ready(function() {
   $('.gameSquare').on('click', function(event){
       // $(event.target).toggle();
@@ -12,15 +13,24 @@ $( document ).ready(function() {
     var a = event.target.id.charAt(6);
     var b = event.target.id.charAt(7);
 
-    if((shipPlacement[a][b]) === 1){
-      console.log('hit');
-      event.target.style.background = 'red';
-    } else {
-      console.log('miss');
-      event.target.style.background = 'white';
-    }
-    // console.log(shipPlacement[a][b]);
 
+    if((shipPlacement[a][b]) === 1){
+      // console.log('hit');
+      hitCounter += 1;
+      event.target.style.background = 'red';
+      // console.log(hitCounter);
+      $('.hitScore').html('Hello World!');
+    } else {
+      // console.log('miss');
+      missCounter += 1;
+      event.target.style.background = 'white';
+      // console.log(missCounter);
+    }
+    console.log(hitCounter);
+    if(hitCounter === 20){
+      alert('You Sunk all the ships!');
+      window.location.href = "win.html";
+    }
   });
 });
 
@@ -34,12 +44,6 @@ for (var i = 0; i < 10; i++) {
   for (var j = 0; j < 10; j++) {
     var gameSquare = document.createElement('div');
     wave.appendChild(gameSquare);
-
-    // var gameSquareCover = document.createElement('div');
-    // gameSquare.appendChild(gameSquareCover);
-    // gameSquareCover.style.backgroundColor = 'green';
-    // gameSquareCover.style.height = '100px';
-
     shipPlacement[i][j] = 0;
     gameSquare.className = 'gameSquare';
     gameSquare.id = 'square' + j + i;

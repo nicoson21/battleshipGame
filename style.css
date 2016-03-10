@@ -34,7 +34,13 @@ footer {
 .twitterBox {
   border: 1px solid #051937;
 }
-
+.scoreboard {
+  font-size: 25px;
+}
+.score {
+font-size: 30px;
+font-weight: bold;
+}
 .talkingToPlayer {
   font-size: 25px;
   text-align: center;
