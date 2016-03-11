@@ -2,12 +2,15 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Win</title>
+    <title>Users</title>
     <link rel="stylesheet" href="style.css"/>
     <script src="https://code.jquery.com/jquery-2.2.1.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/yeti/bootstrap.min.css">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" ></script>
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-json/2.5.1/jquery.json.min.js'></script>
+
   </head>
 
   <body>
@@ -38,11 +41,23 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <p>User Information Text</p>
+          <script>
+          var ref = new Firebase("https://piratessinkships.firebaseio.com/");
+          // Attach an asynchronous callback to read the data at our posts reference
+          ref.on("value", function(snapshot) {
+
+            $('.pirateUserList').append($('<div>').text(JSON.stringify(snapshot.val(), null, 1)));
+
+            }, function (errorObject) {
+            console.log("The read failed: " + errorObject.code);
+            });
+
+          </script>
+          <div class="pirateUserList"></div>
         </div>
       </div>
 
     </div>
-
+    <script type="text/javascript" src="form.js"></script>
   </body>
 </html>

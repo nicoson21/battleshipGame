@@ -50,7 +50,7 @@
           </div>
         <div class="col-md-6">
           <h2>First some questions... <small></small></h2>
-          <form class="" action="game.html" method="post">
+          <form class="" action="game.html" method="get">
             <div>
               <label for="">Name</label>
               <input type="text" class="form-control" name="name" id="nameInput" placeholder="" required>
@@ -71,24 +71,15 @@
         </div>
       <div class="row">
         <div class="col-md-12 text-center">
-          <!-- <div id='messagesDiv'></div> -->
-          <!-- <input type='text' id='nameInput' placeholder='Name'> -->
-          <input type='text' id='messageInput' placeholder='Message'>
+
           <script>
-            var myDataRef = new Firebase('https://ippltfiad5h.firebaseio-demo.com/');
-            $('#messageInput').keypress(function (e) {
-              e.preventDefault();
-              if (e.keyCode == 13) {
+            var myDataRef = new Firebase('https://piratessinkships.firebaseio.com/');
+            $('form').on('submit', function (e) {
                 var name = $('#nameInput').val();
                 var pirateName = $('#pirateName').val();
                 var age = $('#age').val();
-                var age = $('#age').val();
                 var email = $('#email').val();
-                var text = $('#messageInput').val();
-                myDataRef.push({name: name, text: text, pirateName: pirateName, age: age, email: email});
-                $location = 'game.html';
-              }
-              // evt.preventDefault();
+                myDataRef.push({name: name, pirateName: pirateName, age: age, email: email});
             });
           </script>
         </div>
@@ -98,6 +89,6 @@
         </div>
       </div>
     </div>
-    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="form.js"></script>
   </body>
 </html>
