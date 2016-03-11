@@ -46,7 +46,10 @@
           // Attach an asynchronous callback to read the data at our posts reference
           ref.on("value", function(snapshot) {
 
-            $('.pirateUserList').append($('<div>').text(JSON.stringify(snapshot.val(), null, 1)));
+            $('.pirateUserList').append($('<div>').text(JSON.stringify(snapshot.val())));
+
+            var keys = Object.keys(snapshot.val());
+            console.log(snapshot.val()[keys[0]]);
 
             }, function (errorObject) {
             console.log("The read failed: " + errorObject.code);
