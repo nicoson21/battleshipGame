@@ -48,6 +48,14 @@
 
             $('.pirateUserList').append($('<div>').text(JSON.stringify(snapshot.val(), null, 1)));
 
+            // console.log(Object.keys(snapshot.val()).length);
+            for (var i = 0; i < Object.keys(snapshot.val()).length; i++) {
+              var key = snapshot.val()).length;
+              console.log(key);
+            }
+            var keys = Object.keys(snapshot.val());
+            console.log(snapshot.val()[keys[0]]);
+
             }, function (errorObject) {
             console.log("The read failed: " + errorObject.code);
             });
