@@ -1,6 +1,3 @@
-## Battleship Game
-Play at http://sinkships.surge.sh/ !
-
 ##Quarter 1 Project Proposal
 Submitted: 3/7/16
 

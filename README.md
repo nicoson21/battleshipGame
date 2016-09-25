@@ -1,5 +1,8 @@
 ##Battleship Game
 Basic single-player battleship game built using HTML/CSS, JavaScript, and jQuery.
+
+Play at http://sinkships.surge.sh/ !
+
 Live walkthrough at: https://youtu.be/paf-em6zqSQ
 
 Some features of this project include:
