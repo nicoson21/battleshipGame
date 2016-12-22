@@ -1,5 +1,5 @@
 ##Battleship Game
-Basic single-player battleship game built using HTML/CSS, JavaScript, and jQuery.
+A basic battleship game built with javascript and jQuery — including recursive logic for ship placement, a scoreboard, HTML form collection of user information, and Bootstrap CSS.
 
 Play at http://sinkships.surge.sh/ !
 
